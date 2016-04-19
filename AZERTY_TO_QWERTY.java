@@ -58,7 +58,8 @@ public class AZERTY_TO_QWERTY {
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-				System.out.println(e.getKeyCode() +" " + e.getExtendedKeyCode() + " " + KeyEvent.VK_0);
+				//This wasn't supposed to be there, I was checking for other ways to solve the problem
+			//	System.out.println(e.getKeyCode() +" " + e.getExtendedKeyCode() + " " + KeyEvent.VK_0);
 				//Track if the Shift key has been released
 				if(e.getKeyCode() == KeyEvent.VK_SHIFT)
 					shift = false;
@@ -67,7 +68,8 @@ public class AZERTY_TO_QWERTY {
 					e.consume();
 				//Switch statement that handles all the differences between an AZERTY and
 				//QWERTY keyboard. Adds the QWERTY translation to a JTextArea.
-				switch(e.getKeyCode()){
+				//This was supposed to be e.getExtendedKeyCode()
+				switch(e.getExtendedKeyCode()){
 					case (16777440):
 						if(shift == true)
 							qwerty.insert(")",qwerty.getCaretPosition());
